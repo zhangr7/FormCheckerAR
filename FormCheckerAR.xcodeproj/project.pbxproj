@@ -1,0 +1,590 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F2AC409D2B0033D50054C327 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2AC409C2B0033D50054C327 /* AppDelegate.swift */; };
+		F2AC409F2B0033D50054C327 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2AC409E2B0033D50054C327 /* ContentView.swift */; };
+		F2AC40A12B0033D50054C327 /* Experience.rcproject in Sources */ = {isa = PBXBuildFile; fileRef = F2AC40A02B0033D50054C327 /* Experience.rcproject */; };
+		F2AC40A32B0033D80054C327 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F2AC40A22B0033D80054C327 /* Assets.xcassets */; };
+		F2AC40A62B0033D80054C327 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F2AC40A52B0033D80054C327 /* Preview Assets.xcassets */; };
+		F2AC40B02B0033D80054C327 /* FormCheckerARTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2AC40AF2B0033D80054C327 /* FormCheckerARTests.swift */; };
+		F2AC40BA2B0033D80054C327 /* FormCheckerARUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2AC40B92B0033D80054C327 /* FormCheckerARUITests.swift */; };
+		F2AC40BC2B0033D80054C327 /* FormCheckerARUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2AC40BB2B0033D80054C327 /* FormCheckerARUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F2AC40AC2B0033D80054C327 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F2AC40912B0033D50054C327 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F2AC40982B0033D50054C327;
+			remoteInfo = FormCheckerAR;
+		};
+		F2AC40B62B0033D80054C327 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F2AC40912B0033D50054C327 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F2AC40982B0033D50054C327;
+			remoteInfo = FormCheckerAR;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		F2AC40992B0033D50054C327 /* FormCheckerAR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FormCheckerAR.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F2AC409C2B0033D50054C327 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		F2AC409E2B0033D50054C327 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		F2AC40A02B0033D50054C327 /* Experience.rcproject */ = {isa = PBXFileReference; lastKnownFileType = file.rcproject; path = Experience.rcproject; sourceTree = "<group>"; };
+		F2AC40A22B0033D80054C327 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F2AC40A52B0033D80054C327 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		F2AC40AB2B0033D80054C327 /* FormCheckerARTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FormCheckerARTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F2AC40AF2B0033D80054C327 /* FormCheckerARTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormCheckerARTests.swift; sourceTree = "<group>"; };
+		F2AC40B52B0033D80054C327 /* FormCheckerARUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FormCheckerARUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F2AC40B92B0033D80054C327 /* FormCheckerARUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormCheckerARUITests.swift; sourceTree = "<group>"; };
+		F2AC40BB2B0033D80054C327 /* FormCheckerARUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormCheckerARUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F2AC40962B0033D50054C327 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F2AC40A82B0033D80054C327 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F2AC40B22B0033D80054C327 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F2AC40902B0033D50054C327 = {
+			isa = PBXGroup;
+			children = (
+				F2AC409B2B0033D50054C327 /* FormCheckerAR */,
+				F2AC40AE2B0033D80054C327 /* FormCheckerARTests */,
+				F2AC40B82B0033D80054C327 /* FormCheckerARUITests */,
+				F2AC409A2B0033D50054C327 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F2AC409A2B0033D50054C327 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F2AC40992B0033D50054C327 /* FormCheckerAR.app */,
+				F2AC40AB2B0033D80054C327 /* FormCheckerARTests.xctest */,
+				F2AC40B52B0033D80054C327 /* FormCheckerARUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F2AC409B2B0033D50054C327 /* FormCheckerAR */ = {
+			isa = PBXGroup;
+			children = (
+				F2AC409C2B0033D50054C327 /* AppDelegate.swift */,
+				F2AC409E2B0033D50054C327 /* ContentView.swift */,
+				F2AC40A02B0033D50054C327 /* Experience.rcproject */,
+				F2AC40A22B0033D80054C327 /* Assets.xcassets */,
+				F2AC40A42B0033D80054C327 /* Preview Content */,
+			);
+			path = FormCheckerAR;
+			sourceTree = "<group>";
+		};
+		F2AC40A42B0033D80054C327 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				F2AC40A52B0033D80054C327 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		F2AC40AE2B0033D80054C327 /* FormCheckerARTests */ = {
+			isa = PBXGroup;
+			children = (
+				F2AC40AF2B0033D80054C327 /* FormCheckerARTests.swift */,
+			);
+			path = FormCheckerARTests;
+			sourceTree = "<group>";
+		};
+		F2AC40B82B0033D80054C327 /* FormCheckerARUITests */ = {
+			isa = PBXGroup;
+			children = (
+				F2AC40B92B0033D80054C327 /* FormCheckerARUITests.swift */,
+				F2AC40BB2B0033D80054C327 /* FormCheckerARUITestsLaunchTests.swift */,
+			);
+			path = FormCheckerARUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F2AC40982B0033D50054C327 /* FormCheckerAR */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F2AC40BF2B0033D80054C327 /* Build configuration list for PBXNativeTarget "FormCheckerAR" */;
+			buildPhases = (
+				F2AC40952B0033D50054C327 /* Sources */,
+				F2AC40962B0033D50054C327 /* Frameworks */,
+				F2AC40972B0033D50054C327 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FormCheckerAR;
+			productName = FormCheckerAR;
+			productReference = F2AC40992B0033D50054C327 /* FormCheckerAR.app */;
+			productType = "com.apple.product-type.application";
+		};
+		F2AC40AA2B0033D80054C327 /* FormCheckerARTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F2AC40C22B0033D80054C327 /* Build configuration list for PBXNativeTarget "FormCheckerARTests" */;
+			buildPhases = (
+				F2AC40A72B0033D80054C327 /* Sources */,
+				F2AC40A82B0033D80054C327 /* Frameworks */,
+				F2AC40A92B0033D80054C327 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F2AC40AD2B0033D80054C327 /* PBXTargetDependency */,
+			);
+			name = FormCheckerARTests;
+			productName = FormCheckerARTests;
+			productReference = F2AC40AB2B0033D80054C327 /* FormCheckerARTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		F2AC40B42B0033D80054C327 /* FormCheckerARUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F2AC40C52B0033D80054C327 /* Build configuration list for PBXNativeTarget "FormCheckerARUITests" */;
+			buildPhases = (
+				F2AC40B12B0033D80054C327 /* Sources */,
+				F2AC40B22B0033D80054C327 /* Frameworks */,
+				F2AC40B32B0033D80054C327 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F2AC40B72B0033D80054C327 /* PBXTargetDependency */,
+			);
+			name = FormCheckerARUITests;
+			productName = FormCheckerARUITests;
+			productReference = F2AC40B52B0033D80054C327 /* FormCheckerARUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F2AC40912B0033D50054C327 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1420;
+				LastUpgradeCheck = 1420;
+				TargetAttributes = {
+					F2AC40982B0033D50054C327 = {
+						CreatedOnToolsVersion = 14.2;
+					};
+					F2AC40AA2B0033D80054C327 = {
+						CreatedOnToolsVersion = 14.2;
+						TestTargetID = F2AC40982B0033D50054C327;
+					};
+					F2AC40B42B0033D80054C327 = {
+						CreatedOnToolsVersion = 14.2;
+						TestTargetID = F2AC40982B0033D50054C327;
+					};
+				};
+			};
+			buildConfigurationList = F2AC40942B0033D50054C327 /* Build configuration list for PBXProject "FormCheckerAR" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F2AC40902B0033D50054C327;
+			productRefGroup = F2AC409A2B0033D50054C327 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F2AC40982B0033D50054C327 /* FormCheckerAR */,
+				F2AC40AA2B0033D80054C327 /* FormCheckerARTests */,
+				F2AC40B42B0033D80054C327 /* FormCheckerARUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F2AC40972B0033D50054C327 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F2AC40A62B0033D80054C327 /* Preview Assets.xcassets in Resources */,
+				F2AC40A32B0033D80054C327 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F2AC40A92B0033D80054C327 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F2AC40B32B0033D80054C327 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F2AC40952B0033D50054C327 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F2AC409F2B0033D50054C327 /* ContentView.swift in Sources */,
+				F2AC409D2B0033D50054C327 /* AppDelegate.swift in Sources */,
+				F2AC40A12B0033D50054C327 /* Experience.rcproject in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F2AC40A72B0033D80054C327 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F2AC40B02B0033D80054C327 /* FormCheckerARTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F2AC40B12B0033D80054C327 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F2AC40BA2B0033D80054C327 /* FormCheckerARUITests.swift in Sources */,
+				F2AC40BC2B0033D80054C327 /* FormCheckerARUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F2AC40AD2B0033D80054C327 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F2AC40982B0033D50054C327 /* FormCheckerAR */;
+			targetProxy = F2AC40AC2B0033D80054C327 /* PBXContainerItemProxy */;
+		};
+		F2AC40B72B0033D80054C327 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F2AC40982B0033D50054C327 /* FormCheckerAR */;
+			targetProxy = F2AC40B62B0033D80054C327 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		F2AC40BD2B0033D80054C327 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		F2AC40BE2B0033D80054C327 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F2AC40C02B0033D80054C327 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"FormCheckerAR/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UIRequiredDeviceCapabilities = arkit;
+				INFOPLIST_KEY_UIStatusBarHidden = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Zhang.FormCheckerAR;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F2AC40C12B0033D80054C327 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"FormCheckerAR/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UIRequiredDeviceCapabilities = arkit;
+				INFOPLIST_KEY_UIStatusBarHidden = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Zhang.FormCheckerAR;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		F2AC40C32B0033D80054C327 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Zhang.FormCheckerARTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FormCheckerAR.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/FormCheckerAR";
+			};
+			name = Debug;
+		};
+		F2AC40C42B0033D80054C327 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Zhang.FormCheckerARTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FormCheckerAR.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/FormCheckerAR";
+			};
+			name = Release;
+		};
+		F2AC40C62B0033D80054C327 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Zhang.FormCheckerARUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = FormCheckerAR;
+			};
+			name = Debug;
+		};
+		F2AC40C72B0033D80054C327 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Zhang.FormCheckerARUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = FormCheckerAR;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F2AC40942B0033D50054C327 /* Build configuration list for PBXProject "FormCheckerAR" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F2AC40BD2B0033D80054C327 /* Debug */,
+				F2AC40BE2B0033D80054C327 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F2AC40BF2B0033D80054C327 /* Build configuration list for PBXNativeTarget "FormCheckerAR" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F2AC40C02B0033D80054C327 /* Debug */,
+				F2AC40C12B0033D80054C327 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F2AC40C22B0033D80054C327 /* Build configuration list for PBXNativeTarget "FormCheckerARTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F2AC40C32B0033D80054C327 /* Debug */,
+				F2AC40C42B0033D80054C327 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F2AC40C52B0033D80054C327 /* Build configuration list for PBXNativeTarget "FormCheckerARUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F2AC40C62B0033D80054C327 /* Debug */,
+				F2AC40C72B0033D80054C327 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F2AC40912B0033D50054C327 /* Project object */;
+}
