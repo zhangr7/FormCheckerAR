@@ -9,12 +9,12 @@
 /* Begin PBXBuildFile section */
 		F2AC409D2B0033D50054C327 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2AC409C2B0033D50054C327 /* AppDelegate.swift */; };
 		F2AC409F2B0033D50054C327 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2AC409E2B0033D50054C327 /* ContentView.swift */; };
-		F2AC40A12B0033D50054C327 /* Experience.rcproject in Sources */ = {isa = PBXBuildFile; fileRef = F2AC40A02B0033D50054C327 /* Experience.rcproject */; };
 		F2AC40A32B0033D80054C327 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F2AC40A22B0033D80054C327 /* Assets.xcassets */; };
 		F2AC40A62B0033D80054C327 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F2AC40A52B0033D80054C327 /* Preview Assets.xcassets */; };
 		F2AC40B02B0033D80054C327 /* FormCheckerARTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2AC40AF2B0033D80054C327 /* FormCheckerARTests.swift */; };
 		F2AC40BA2B0033D80054C327 /* FormCheckerARUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2AC40B92B0033D80054C327 /* FormCheckerARUITests.swift */; };
 		F2AC40BC2B0033D80054C327 /* FormCheckerARUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2AC40BB2B0033D80054C327 /* FormCheckerARUITestsLaunchTests.swift */; };
+		F2AC40CA2B0043BA0054C327 /* tv_retro.usdz in Resources */ = {isa = PBXBuildFile; fileRef = F2AC40C92B0043BA0054C327 /* tv_retro.usdz */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,7 +38,6 @@
 		F2AC40992B0033D50054C327 /* FormCheckerAR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FormCheckerAR.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2AC409C2B0033D50054C327 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F2AC409E2B0033D50054C327 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		F2AC40A02B0033D50054C327 /* Experience.rcproject */ = {isa = PBXFileReference; lastKnownFileType = file.rcproject; path = Experience.rcproject; sourceTree = "<group>"; };
 		F2AC40A22B0033D80054C327 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F2AC40A52B0033D80054C327 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		F2AC40AB2B0033D80054C327 /* FormCheckerARTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FormCheckerARTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -46,6 +45,7 @@
 		F2AC40B52B0033D80054C327 /* FormCheckerARUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FormCheckerARUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2AC40B92B0033D80054C327 /* FormCheckerARUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormCheckerARUITests.swift; sourceTree = "<group>"; };
 		F2AC40BB2B0033D80054C327 /* FormCheckerARUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormCheckerARUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		F2AC40C92B0043BA0054C327 /* tv_retro.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = tv_retro.usdz; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,9 +96,9 @@
 		F2AC409B2B0033D50054C327 /* FormCheckerAR */ = {
 			isa = PBXGroup;
 			children = (
+				F2AC40C82B00432A0054C327 /* Models */,
 				F2AC409C2B0033D50054C327 /* AppDelegate.swift */,
 				F2AC409E2B0033D50054C327 /* ContentView.swift */,
-				F2AC40A02B0033D50054C327 /* Experience.rcproject */,
 				F2AC40A22B0033D80054C327 /* Assets.xcassets */,
 				F2AC40A42B0033D80054C327 /* Preview Content */,
 			);
@@ -128,6 +128,14 @@
 				F2AC40BB2B0033D80054C327 /* FormCheckerARUITestsLaunchTests.swift */,
 			);
 			path = FormCheckerARUITests;
+			sourceTree = "<group>";
+		};
+		F2AC40C82B00432A0054C327 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F2AC40C92B0043BA0054C327 /* tv_retro.usdz */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -234,6 +242,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F2AC40CA2B0043BA0054C327 /* tv_retro.usdz in Resources */,
 				F2AC40A62B0033D80054C327 /* Preview Assets.xcassets in Resources */,
 				F2AC40A32B0033D80054C327 /* Assets.xcassets in Resources */,
 			);
@@ -262,7 +271,6 @@
 			files = (
 				F2AC409F2B0033D50054C327 /* ContentView.swift in Sources */,
 				F2AC409D2B0033D50054C327 /* AppDelegate.swift in Sources */,
-				F2AC40A12B0033D50054C327 /* Experience.rcproject in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
