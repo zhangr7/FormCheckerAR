@@ -7,15 +7,41 @@
 
 import SwiftUI
 import RealityKit
+import Foundation
 
 struct ContentView : View {
-    var models: [String] = ["tv_retro"]
+    @State private var isPlacementEnabled = false
+    
+    private var models: [String] = {
+        // Dynamically get file names
+        let filemanager = FileManager.default
+        
+        guard let path = Bundle.main.resourcePath, let files = try? filemanager.contentsOfDirectory(atPath: path) else {
+            return []
+        }
+        
+        var availableModels: [String] = []
+        for filename in files where filename.hasSuffix("usdz")  {
+            let modelName = filename.replacingOccurrences(of: ".usdz", with: "")
+            availableModels.append(modelName)
+        }
+        
+        return availableModels
+    }()
     
     var body: some View {
         ZStack(alignment: .bottom) {
             ARViewContainer()
             
-            ModelPickerView(models: self.models)
+            if self.isPlacementEnabled {
+                PlacementButtonsView()
+                else  {
+                    ModelPickerView(models: self.models)
+                }
+            }
+            ModelPickerView(isPlacementEnabled: self.$isPlacementEnabled, models: self.models)
+            
+            PlacementButtonsView()
             
         }
        
@@ -37,6 +63,8 @@ struct ARViewContainer: UIViewRepresentable {
 }
 
 struct ModelPickerView: View {
+    @Binding var isPlacementEnabled: Bool
+    
     var models: [String]
     
     var body: some View {
@@ -46,6 +74,7 @@ struct ModelPickerView: View {
                     index in
                     Button(action: {
                         print("DEBUG: selected model with name: \(self.models[index])")
+                        self.isPlacementEnabled = true
                     }) {
                         Image(uiImage: UIImage(named: self.models[index])!)
                             .resizable()
@@ -61,6 +90,44 @@ struct ModelPickerView: View {
         }
         .padding(20)
         .background(Color.black.opacity(0.5))
+    }
+}
+
+struct PlacementButtonsView: View {
+    @Binding var isPlacementEnabled: Bool
+    
+    var body: some View {
+        HStack {
+            // Cancel Button
+            Button(action: {
+                print("DEBUG: Cancel model placement.")
+                self.resetPlacementParameters()
+            }) {
+                Image(systemName: "xmark")
+                    .frame(width: 60, height: 60)
+                    .font(.title)
+                    .background(Color.white.opacity(0.75))
+                    .cornerRadius(30)
+                    .padding(20)
+            }
+            
+            // Confirm Button
+            Button(action: {
+                print("DEBUG: model placement confirmation.")
+                self.resetPlacementParameters()
+            })  {
+                Image(systemName: "checkmark")
+                    .frame(width: 60, height: 60)
+                    .font(.title)
+                    .background(Color.white.opacity(0.75))
+                    .cornerRadius(30)
+                    .padding(20)
+            }
+        }
+    }
+    
+    func resetPlacementParameters() {
+        self.isPlacementEnabled = false
     }
 }
 
