@@ -1,9 +1,7 @@
 //
 //  AppDelegate.swift
 //  FormCheckerAR
-//
-//  Created by Robert Zhang on 11/11/23.
-//
+
 
 import UIKit
 import SwiftUI

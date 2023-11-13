@@ -4,10 +4,35 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>FormCheckerAR.xcscheme_^#shared#^_</key>
+		<key>FormCheckerAR 1.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
+		<key>FormCheckerAR.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+			<key>orderHint</key>
 			<integer>0</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>F2AC40982B0033D50054C327</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F2AC40AA2B0033D80054C327</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F2AC40B42B0033D80054C327</key>
+		<dict>
+			<key>primary</key>
+			<true/>
 		</dict>
 	</dict>
 </dict>

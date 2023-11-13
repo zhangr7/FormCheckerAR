@@ -1,9 +1,6 @@
 //
 //  FormCheckerARUITests.swift
 //  FormCheckerARUITests
-//
-//  Created by Robert Zhang on 11/11/23.
-//
 
 import XCTest
 

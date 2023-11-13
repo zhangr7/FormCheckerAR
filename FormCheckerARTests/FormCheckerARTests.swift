@@ -1,9 +1,7 @@
 //
 //  FormCheckerARTests.swift
 //  FormCheckerARTests
-//
-//  Created by Robert Zhang on 11/11/23.
-//
+
 
 import XCTest
 @testable import FormCheckerAR
