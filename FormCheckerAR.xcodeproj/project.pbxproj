@@ -18,6 +18,7 @@
 		F2AC40BA2B0033D80054C327 /* FormCheckerARUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2AC40B92B0033D80054C327 /* FormCheckerARUITests.swift */; };
 		F2AC40BC2B0033D80054C327 /* FormCheckerARUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2AC40BB2B0033D80054C327 /* FormCheckerARUITestsLaunchTests.swift */; };
 		F2AC40CA2B0043BA0054C327 /* tv_retro.usdz in Resources */ = {isa = PBXBuildFile; fileRef = F2AC40C92B0043BA0054C327 /* tv_retro.usdz */; };
+		F2C186AF2B06AD1C00BA1044 /* Body.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C186AE2B06AD1C00BA1044 /* Body.swift */; };
 		F2E1F39B2B01B54900045A8A /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2E1F39A2B01B54900045A8A /* Model.swift */; };
 		F2E1F39E2B01C0CB00045A8A /* FocusEntity in Frameworks */ = {isa = PBXBuildFile; productRef = F2E1F39D2B01C0CB00045A8A /* FocusEntity */; };
 /* End PBXBuildFile section */
@@ -55,6 +56,7 @@
 		F2AC40BB2B0033D80054C327 /* FormCheckerARUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormCheckerARUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		F2AC40C92B0043BA0054C327 /* tv_retro.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = tv_retro.usdz; sourceTree = "<group>"; };
 		F2BFC5BB2B02B6740041F682 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		F2C186AE2B06AD1C00BA1044 /* Body.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Body.swift; sourceTree = "<group>"; };
 		F2E1F39A2B01B54900045A8A /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -117,6 +119,7 @@
 				F27B6F072B02CA1400A59D21 /* SkeletonJoint.swift */,
 				F27B6F092B02D0FB00A59D21 /* SkeletonBone.swift */,
 				F27B6F0B2B02D23300A59D21 /* Bones.swift */,
+				F2C186AE2B06AD1C00BA1044 /* Body.swift */,
 			);
 			path = FormCheckerAR;
 			sourceTree = "<group>";
@@ -292,6 +295,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F2E1F39B2B01B54900045A8A /* Model.swift in Sources */,
+				F2C186AF2B06AD1C00BA1044 /* Body.swift in Sources */,
 				F27B6F0C2B02D23300A59D21 /* Bones.swift in Sources */,
 				F27B6F0A2B02D0FB00A59D21 /* SkeletonBone.swift in Sources */,
 				F2AC409F2B0033D50054C327 /* ContentView.swift in Sources */,

@@ -50,6 +50,8 @@ struct ContentView : View {
        
     }
 
+private var bodySkeleton: Body?
+private let bodySkeletonAnchor = AnchorEntity()
 
 struct ARViewContainer: UIViewRepresentable {
     
@@ -58,6 +60,9 @@ struct ARViewContainer: UIViewRepresentable {
     func makeUIView(context: Context) -> ARView {
         
         let arView = CustomARView(frame: .zero)
+        
+        arView.setupForBodyTracking()
+        arView.scene.addAnchor(bodySkeletonAnchor)
         
         return arView
         
@@ -84,6 +89,28 @@ struct ARViewContainer: UIViewRepresentable {
         }
     }
     
+}
+
+extension ARView: ARSessionDelegate {
+    func setupForBodyTracking() {
+        let configuration = ARBodyTrackingConfiguration()
+        self.session.run(configuration)
+        
+        self.session.delegate = self
+    }
+    
+    public func session(_ session: ARSession, didUpdate anchors: [ARAnchor]) {
+        for anchor in anchors {
+            if let bodyAnchor = anchor as? ARBodyAnchor {
+                if let skeleton = bodySkeleton {
+                    skeleton.update(with: bodyAnchor)
+                } else {
+                    bodySkeleton = Body(for: bodyAnchor)
+                    bodySkeletonAnchor.addChild(bodySkeleton!)
+                }
+            }
+        }
+    }
 }
 
 class CustomARView: ARView {
