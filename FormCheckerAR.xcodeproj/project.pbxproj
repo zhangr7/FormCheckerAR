@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F27B6F082B02CA1400A59D21 /* SkeletonJoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = F27B6F072B02CA1400A59D21 /* SkeletonJoint.swift */; };
+		F27B6F0A2B02D0FB00A59D21 /* SkeletonBone.swift in Sources */ = {isa = PBXBuildFile; fileRef = F27B6F092B02D0FB00A59D21 /* SkeletonBone.swift */; };
+		F27B6F0C2B02D23300A59D21 /* Bones.swift in Sources */ = {isa = PBXBuildFile; fileRef = F27B6F0B2B02D23300A59D21 /* Bones.swift */; };
 		F2AC409D2B0033D50054C327 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2AC409C2B0033D50054C327 /* AppDelegate.swift */; };
 		F2AC409F2B0033D50054C327 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2AC409E2B0033D50054C327 /* ContentView.swift */; };
 		F2AC40A32B0033D80054C327 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F2AC40A22B0033D80054C327 /* Assets.xcassets */; };
@@ -15,6 +18,8 @@
 		F2AC40BA2B0033D80054C327 /* FormCheckerARUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2AC40B92B0033D80054C327 /* FormCheckerARUITests.swift */; };
 		F2AC40BC2B0033D80054C327 /* FormCheckerARUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2AC40BB2B0033D80054C327 /* FormCheckerARUITestsLaunchTests.swift */; };
 		F2AC40CA2B0043BA0054C327 /* tv_retro.usdz in Resources */ = {isa = PBXBuildFile; fileRef = F2AC40C92B0043BA0054C327 /* tv_retro.usdz */; };
+		F2E1F39B2B01B54900045A8A /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2E1F39A2B01B54900045A8A /* Model.swift */; };
+		F2E1F39E2B01C0CB00045A8A /* FocusEntity in Frameworks */ = {isa = PBXBuildFile; productRef = F2E1F39D2B01C0CB00045A8A /* FocusEntity */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +40,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F27B6F072B02CA1400A59D21 /* SkeletonJoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkeletonJoint.swift; sourceTree = "<group>"; };
+		F27B6F092B02D0FB00A59D21 /* SkeletonBone.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkeletonBone.swift; sourceTree = "<group>"; };
+		F27B6F0B2B02D23300A59D21 /* Bones.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bones.swift; sourceTree = "<group>"; };
 		F2AC40992B0033D50054C327 /* FormCheckerAR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FormCheckerAR.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2AC409C2B0033D50054C327 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F2AC409E2B0033D50054C327 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -46,6 +54,8 @@
 		F2AC40B92B0033D80054C327 /* FormCheckerARUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormCheckerARUITests.swift; sourceTree = "<group>"; };
 		F2AC40BB2B0033D80054C327 /* FormCheckerARUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormCheckerARUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		F2AC40C92B0043BA0054C327 /* tv_retro.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = tv_retro.usdz; sourceTree = "<group>"; };
+		F2BFC5BB2B02B6740041F682 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		F2E1F39A2B01B54900045A8A /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +63,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F2E1F39E2B01C0CB00045A8A /* FocusEntity in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -96,11 +107,16 @@
 		F2AC409B2B0033D50054C327 /* FormCheckerAR */ = {
 			isa = PBXGroup;
 			children = (
+				F2BFC5BB2B02B6740041F682 /* Info.plist */,
 				F2AC40C82B00432A0054C327 /* Models */,
 				F2AC409C2B0033D50054C327 /* AppDelegate.swift */,
 				F2AC409E2B0033D50054C327 /* ContentView.swift */,
 				F2AC40A22B0033D80054C327 /* Assets.xcassets */,
 				F2AC40A42B0033D80054C327 /* Preview Content */,
+				F2E1F39A2B01B54900045A8A /* Model.swift */,
+				F27B6F072B02CA1400A59D21 /* SkeletonJoint.swift */,
+				F27B6F092B02D0FB00A59D21 /* SkeletonBone.swift */,
+				F27B6F0B2B02D23300A59D21 /* Bones.swift */,
 			);
 			path = FormCheckerAR;
 			sourceTree = "<group>";
@@ -154,6 +170,9 @@
 			dependencies = (
 			);
 			name = FormCheckerAR;
+			packageProductDependencies = (
+				F2E1F39D2B01C0CB00045A8A /* FocusEntity */,
+			);
 			productName = FormCheckerAR;
 			productReference = F2AC40992B0033D50054C327 /* FormCheckerAR.app */;
 			productType = "com.apple.product-type.application";
@@ -226,6 +245,9 @@
 				Base,
 			);
 			mainGroup = F2AC40902B0033D50054C327;
+			packageReferences = (
+				F2E1F39C2B01C0CB00045A8A /* XCRemoteSwiftPackageReference "FocusEntity" */,
+			);
 			productRefGroup = F2AC409A2B0033D50054C327 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -269,8 +291,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F2E1F39B2B01B54900045A8A /* Model.swift in Sources */,
+				F27B6F0C2B02D23300A59D21 /* Bones.swift in Sources */,
+				F27B6F0A2B02D0FB00A59D21 /* SkeletonBone.swift in Sources */,
 				F2AC409F2B0033D50054C327 /* ContentView.swift in Sources */,
 				F2AC409D2B0033D50054C327 /* AppDelegate.swift in Sources */,
+				F27B6F082B02CA1400A59D21 /* SkeletonJoint.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -431,7 +457,8 @@
 				DEVELOPMENT_ASSET_PATHS = "\"FormCheckerAR/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_NSCameraUsageDescription = "";
+				INFOPLIST_FILE = FormCheckerAR/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "This app needs access to the camera to enable Augmented Reality features";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UIRequiredDeviceCapabilities = arkit;
@@ -461,7 +488,8 @@
 				DEVELOPMENT_ASSET_PATHS = "\"FormCheckerAR/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_NSCameraUsageDescription = "";
+				INFOPLIST_FILE = FormCheckerAR/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "This app needs access to the camera to enable Augmented Reality features";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UIRequiredDeviceCapabilities = arkit;
@@ -593,6 +621,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		F2E1F39C2B01C0CB00045A8A /* XCRemoteSwiftPackageReference "FocusEntity" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/maxxfrazer/FocusEntity";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.1.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		F2E1F39D2B01C0CB00045A8A /* FocusEntity */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F2E1F39C2B01C0CB00045A8A /* XCRemoteSwiftPackageReference "FocusEntity" */;
+			productName = FocusEntity;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = F2AC40912B0033D50054C327 /* Project object */;
 }
