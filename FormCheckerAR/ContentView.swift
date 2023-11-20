@@ -65,7 +65,7 @@ struct ARViewContainer: UIViewRepresentable {
         
         let arView = CustomARView(frame: .zero)
         
-        if !modelLoaded {
+        if !self.modelLoaded {
             let config = arView.setupARView()
             arView.session.run(config)
         }
@@ -88,16 +88,16 @@ struct ARViewContainer: UIViewRepresentable {
                 anchorEntity.addChild(modelEntity)
                 
                 uiView.scene.addAnchor(anchorEntity)
-                
-                self.modelLoaded = true
             } else {
                 print("DEBUG: unable to load modelEntity for \(model.modelName)")
             }
             
-            
-            
             DispatchQueue.main.async {
                 self.modelConfirmedForPlacement = nil
+            }
+            
+            DispatchQueue.main.async {
+                self.modelLoaded = true
             }
         }
     }
