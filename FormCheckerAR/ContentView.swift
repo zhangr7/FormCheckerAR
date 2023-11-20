@@ -65,15 +65,8 @@ struct ARViewContainer: UIViewRepresentable {
         
         let arView = CustomARView(frame: .zero)
         
-        if !self.modelLoaded {
-            let config = arView.setupARView()
-            arView.session.run(config)
-        }
-        else {
-            arView.setupForBodyTracking()
-            arView.scene.addAnchor(bodySkeletonAnchor)
-        }
-       
+        let config = arView.setupARView()
+        arView.session.run(config)
         
         return arView
         
@@ -137,8 +130,7 @@ class CustomARView: ARView {
         focusSquare.viewDelegate = self
         focusSquare.delegate = self
         focusSquare.setAutoUpdate(to: true)
-        
-        let config = self.setupARView()
+
     }
     
     
