@@ -94,14 +94,15 @@ struct ARViewContainer: UIViewRepresentable {
             
             DispatchQueue.main.async {
                 self.modelConfirmedForPlacement = nil
-            }
-            
-            DispatchQueue.main.async {
                 self.modelLoaded = true
             }
+    
+        }
+        if self.modelLoaded {
+            uiView.setupForBodyTracking()
+            uiView.scene.addAnchor(bodySkeletonAnchor)
         }
     }
-    
 }
 
 extension ARView: ARSessionDelegate {
