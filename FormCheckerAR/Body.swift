@@ -17,7 +17,7 @@ class Body: Entity {
         super.init()
         
         for jointName in Joints.allCases {
-            var jointRadius: Float = 0.02
+            var jointRadius: Float = 0.04
             var jointColor: UIColor = .blue
             
             let jointEntity = createJoint(radius: jointRadius, color: jointColor)
