@@ -15,6 +15,8 @@ struct ContentView : View {
     @State private var selectedModel: Model?
     @State private var modelConfirmedForPlacement: Model?
     
+    @State private var modelLoaded = false
+    
     private var models: [Model] = {
         // Dynamically get file names
         let filemanager = FileManager.default
@@ -35,15 +37,15 @@ struct ContentView : View {
     
     var body: some View {
         ZStack(alignment: .bottom) {
-            ARViewContainer(modelConfirmedForPlacement: self.$modelConfirmedForPlacement).edgesIgnoringSafeArea(.all)
+            ARViewContainer(modelConfirmedForPlacement: self.$modelConfirmedForPlacement, modelLoaded: self.$modelLoaded).edgesIgnoringSafeArea(.all)
             
             if self.isPlacementEnabled {
                 PlacementButtonsView(isPlacementEnabled: self.$isPlacementEnabled, selectedModel: self.$selectedModel, modelConfirmedForPlacement: self.$modelConfirmedForPlacement)
             }
                 else  {
                     ModelPickerView(isPlacementEnabled: self.$isPlacementEnabled,
-                        selectedModel: self.$selectedModel,
-                        models: self.models)
+                        selectedModel: self.$selectedModel, modelLoaded: self.$modelLoaded,
+                                    models: self.models)
                 }
             }
         }
@@ -57,12 +59,21 @@ struct ARViewContainer: UIViewRepresentable {
     
     @Binding var modelConfirmedForPlacement: Model?
     
+    @Binding var modelLoaded: Bool
+    
     func makeUIView(context: Context) -> ARView {
         
         let arView = CustomARView(frame: .zero)
         
-        arView.setupForBodyTracking()
-        arView.scene.addAnchor(bodySkeletonAnchor)
+        if !modelLoaded {
+            let config = arView.setupARView()
+            arView.session.run(config)
+        }
+        else {
+            arView.setupForBodyTracking()
+            arView.scene.addAnchor(bodySkeletonAnchor)
+        }
+       
         
         return arView
         
@@ -77,6 +88,8 @@ struct ARViewContainer: UIViewRepresentable {
                 anchorEntity.addChild(modelEntity)
                 
                 uiView.scene.addAnchor(anchorEntity)
+                
+                self.modelLoaded = true
             } else {
                 print("DEBUG: unable to load modelEntity for \(model.modelName)")
             }
@@ -114,6 +127,7 @@ extension ARView: ARSessionDelegate {
 }
 
 class CustomARView: ARView {
+    
     let focusSquare = FESquare()
     
     required init(frame frameRect: CGRect) {
@@ -123,14 +137,15 @@ class CustomARView: ARView {
         focusSquare.delegate = self
         focusSquare.setAutoUpdate(to: true)
         
-        self.setupARView()
+        let config = self.setupARView()
     }
+    
     
     @objc required dynamic init?(coder decoder: NSCoder) {
         fatalError("init(coder: ) has not been implemented")
     }
     
-    func setupARView() {
+    func setupARView() -> ARWorldTrackingConfiguration {
         let config = ARWorldTrackingConfiguration()
         config.planeDetection = [.horizontal, .vertical]
         config.environmentTexturing = .automatic
@@ -139,7 +154,7 @@ class CustomARView: ARView {
             config.sceneReconstruction = .mesh
         }
         
-        self.session.run(config)
+        return config
     }
 }
 
@@ -158,6 +173,8 @@ struct ModelPickerView: View {
     @Binding var isPlacementEnabled: Bool
     @Binding var selectedModel: Model?
     
+    @Binding var modelLoaded: Bool
+    
     var models: [Model]
     
     var body: some View {
@@ -169,6 +186,7 @@ struct ModelPickerView: View {
                         print("DEBUG: selected model with name: \(self.models[index].modelName)")
                         self.isPlacementEnabled = true
                         self.selectedModel = self.models[index]
+                        self.modelLoaded = false
                     }) {
                         Image(uiImage: self.models[index].image)
                             .resizable()
