@@ -26,9 +26,9 @@ enum Joints: CaseIterable {
         case .head:
             return "head_joint"
         case .spine1:
-            return "spine_2_joint"
+            return "spine_6_joint"
         case .spine2:
-            return "spine_4_joint"
+            return "spine_3_joint"
         case . hip:
             return "hips_joint"
         case .kneeRight:
@@ -40,9 +40,9 @@ enum Joints: CaseIterable {
         case .footLeft:
             return "left_foot_joint"
         case .shoulderRight:
-            return "right_shoulder_1_joint"
+            return "right_arm_joint"
         case .shoulderLeft:
-            return "left_shoulder_1_joint"
+            return "left_arm_joint"
         case .elbowRight:
             return "right_forearm_joint"
         case .elbowLeft:
