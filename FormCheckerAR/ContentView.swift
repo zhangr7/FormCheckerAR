@@ -37,7 +37,7 @@ struct ContentView : View {
     
     var body: some View {
         ZStack(alignment: .bottom) {
-            ARViewContainer(modelConfirmedForPlacement: self.$modelConfirmedForPlacement, modelLoaded: self.$modelLoaded).edgesIgnoringSafeArea(.all)
+            ARViewContainer(modelConfirmedForPlacement: self.$modelConfirmedForPlacement, modelLoaded: self.$modelLoaded, models: self.models).edgesIgnoringSafeArea(.all)
             
             if self.isPlacementEnabled {
                 PlacementButtonsView(isPlacementEnabled: self.$isPlacementEnabled, selectedModel: self.$selectedModel, modelConfirmedForPlacement: self.$modelConfirmedForPlacement)
@@ -61,6 +61,8 @@ struct ARViewContainer: UIViewRepresentable {
     
     @Binding var modelLoaded: Bool
     
+    var models: [Model]
+    
     func makeUIView(context: Context) -> ARView {
         
         let arView = CustomARView(frame: .zero)
@@ -76,11 +78,22 @@ struct ARViewContainer: UIViewRepresentable {
         if let model = self.modelConfirmedForPlacement {
             if let modelEntity = model.modelEntity {
                 print("DEBUG: adding model to scene - \(model.modelName)")
+                for anchor in uiView.scene.anchors {
+                    if anchor.name == "model" {
+                        uiView.scene.removeAnchor(anchor)
+                    }
+                }
+                
+                var material = PhysicallyBasedMaterial()
+                material.blending = .transparent(opacity: .init(floatLiteral: 0.6))
+                modelEntity.model?.materials[0] = material
                 
                 let anchorEntity = AnchorEntity(plane: .horizontal) // error will be fixed once iphone is attached
+                anchorEntity.name = "model"
                 anchorEntity.addChild(modelEntity)
                 
                 uiView.scene.addAnchor(anchorEntity)
+            
             } else {
                 print("DEBUG: unable to load modelEntity for \(model.modelName)")
             }

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		620A1A0A2B0C4FC400F5D835 /* plank.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 620A1A092B0C4FC400F5D835 /* plank.usdz */; };
 		F27B6F082B02CA1400A59D21 /* SkeletonJoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = F27B6F072B02CA1400A59D21 /* SkeletonJoint.swift */; };
 		F27B6F0A2B02D0FB00A59D21 /* SkeletonBone.swift in Sources */ = {isa = PBXBuildFile; fileRef = F27B6F092B02D0FB00A59D21 /* SkeletonBone.swift */; };
 		F27B6F0C2B02D23300A59D21 /* Bones.swift in Sources */ = {isa = PBXBuildFile; fileRef = F27B6F0B2B02D23300A59D21 /* Bones.swift */; };
@@ -42,6 +43,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		620A1A092B0C4FC400F5D835 /* plank.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = plank.usdz; sourceTree = "<group>"; };
 		F27B6F072B02CA1400A59D21 /* SkeletonJoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkeletonJoint.swift; sourceTree = "<group>"; };
 		F27B6F092B02D0FB00A59D21 /* SkeletonBone.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkeletonBone.swift; sourceTree = "<group>"; };
 		F27B6F0B2B02D23300A59D21 /* Bones.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bones.swift; sourceTree = "<group>"; };
@@ -155,6 +157,7 @@
 		F2AC40C82B00432A0054C327 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				620A1A092B0C4FC400F5D835 /* plank.usdz */,
 				F2AC40C92B0043BA0054C327 /* tv_retro.usdz */,
 			);
 			path = Models;
@@ -273,6 +276,7 @@
 				F2AC40CA2B0043BA0054C327 /* tv_retro.usdz in Resources */,
 				F2AC40A62B0033D80054C327 /* Preview Assets.xcassets in Resources */,
 				F2AC40A32B0033D80054C327 /* Assets.xcassets in Resources */,
+				620A1A0A2B0C4FC400F5D835 /* plank.usdz in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -463,6 +467,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"FormCheckerAR/Preview Content\"";
+				DEVELOPMENT_TEAM = XGX3M3LS2T;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = FormCheckerAR/Info.plist;
@@ -473,6 +478,7 @@
 				INFOPLIST_KEY_UIStatusBarHidden = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -494,6 +500,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"FormCheckerAR/Preview Content\"";
+				DEVELOPMENT_TEAM = XGX3M3LS2T;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = FormCheckerAR/Info.plist;
@@ -504,6 +511,7 @@
 				INFOPLIST_KEY_UIStatusBarHidden = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
