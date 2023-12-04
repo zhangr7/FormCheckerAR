@@ -8,6 +8,7 @@ import RealityKit
 import ARKit
 import Foundation
 import FocusEntity
+import Combine
 
 struct ContentView : View {
     
@@ -37,7 +38,7 @@ struct ContentView : View {
     
     var body: some View {
         ZStack(alignment: .bottom) {
-            ARViewContainer(modelConfirmedForPlacement: self.$modelConfirmedForPlacement, modelLoaded: self.$modelLoaded, models: self.models).edgesIgnoringSafeArea(.all)
+            ARViewContainer(modelConfirmedForPlacement: self.$modelConfirmedForPlacement, modelLoaded: self.$modelLoaded).edgesIgnoringSafeArea(.all)
             
             if self.isPlacementEnabled {
                 PlacementButtonsView(isPlacementEnabled: self.$isPlacementEnabled, selectedModel: self.$selectedModel, modelConfirmedForPlacement: self.$modelConfirmedForPlacement)
@@ -55,13 +56,16 @@ struct ContentView : View {
 private var bodySkeleton: Body?
 private let bodySkeletonAnchor = AnchorEntity()
 
+private var joints: [String:Entity] = [:]
+private var collisionSubs: [AnyCancellable] = []
+
 struct ARViewContainer: UIViewRepresentable {
     
     @Binding var modelConfirmedForPlacement: Model?
     
     @Binding var modelLoaded: Bool
     
-    var models: [Model]
+
     
     func makeUIView(context: Context) -> ARView {
         
@@ -79,7 +83,7 @@ struct ARViewContainer: UIViewRepresentable {
             if let modelEntity = model.modelEntity {
                 print("DEBUG: adding model to scene - \(model.modelName)")
                 for anchor in uiView.scene.anchors {
-                    if anchor.name == "model" {
+                    if anchor.name == "model_anchor" {
                         uiView.scene.removeAnchor(anchor)
                     }
                 }
@@ -87,13 +91,57 @@ struct ARViewContainer: UIViewRepresentable {
                 var material = PhysicallyBasedMaterial()
                 material.blending = .transparent(opacity: .init(floatLiteral: 0.6))
                 modelEntity.model?.materials[0] = material
+                modelEntity.collision = CollisionComponent(shapes: [ShapeResource.generateConvex(from: modelEntity.model!.mesh)])
                 
                 let anchorEntity = AnchorEntity(plane: .horizontal) // error will be fixed once iphone is attached
-                anchorEntity.name = "model"
+                anchorEntity.name = "model_anchor"
+                modelEntity.name = "model"
                 anchorEntity.addChild(modelEntity)
-                
                 uiView.scene.addAnchor(anchorEntity)
+    
+                
+                
+                var jointCollisionSubscriptionBeg:AnyCancellable
+                var jointCollisionSubscriptionEnd:AnyCancellable
+                
+                jointCollisionSubscriptionBeg = uiView.scene.subscribe(
+                    to: CollisionEvents.Began.self,
+                    on: modelEntity
+                ) { event in
+                    DispatchQueue.main.async {
+                        print("DEBUG: collision occurred")
+                        let mEntity = event.entityA as? ModelEntity
+                        let jEntity = event.entityB as? ModelEntity
+                    
+                    
+                        jEntity?.model?.materials = [SimpleMaterial(color: .green, roughness: 0.8, isMetallic: false)]
+                        
+                        let jointName = jEntity?.name
+                        print(jointName)
+                        
+
+                    }
+                } as! AnyCancellable
+                        
+                jointCollisionSubscriptionEnd = uiView.scene.subscribe(
+                    to: CollisionEvents.Ended.self,
+                    on: modelEntity
+                ) { event in
+                    DispatchQueue.main.async {
+                        print("DEBUG: collision ended")
+                        let mEntity = event.entityA as? ModelEntity
+                        let jEntity = event.entityB as? ModelEntity
+                    
+                    
+                        jEntity?.model?.materials = [SimpleMaterial(color: .blue, roughness: 0.8, isMetallic: false)]
+
+                    }
+                } as! AnyCancellable
+                
+                jointCollisionSubscriptionBeg.store(in: &collisionSubs)
+                jointCollisionSubscriptionEnd.store(in: &collisionSubs)
             
+                
             } else {
                 print("DEBUG: unable to load modelEntity for \(model.modelName)")
             }
@@ -102,7 +150,7 @@ struct ARViewContainer: UIViewRepresentable {
                 self.modelConfirmedForPlacement = nil
                 self.modelLoaded = true
             }
-    
+            
         }
         if self.modelLoaded {
             uiView.setupForBodyTracking()
@@ -110,6 +158,29 @@ struct ARViewContainer: UIViewRepresentable {
         }
     }
 }
+    
+    //    func textGen(textString: String) -> ModelEntity {
+    //
+    //            let materialVar = SimpleMaterial(color: .black, roughness: 0, isMetallic: false)
+    //
+    //            let depthVar: Float = 0.001
+    //            let fontVar = UIFont.systemFont(ofSize: 0.02)
+    //            let containerFrameVar = CGRect(x: -0.05, y: -0.1, width: 0.1, height: 0.1)
+    //            let alignmentVar: CTTextAlignment = .center
+    //            let lineBreakModeVar : CTLineBreakMode = .byWordWrapping
+    //
+    //            let textMeshResource : MeshResource = .generateText(textString,
+    //                                               extrusionDepth: depthVar,
+    //                                               font: fontVar,
+    //                                               containerFrame: containerFrameVar,
+    //                                               alignment: alignmentVar,
+    //                                               lineBreakMode: lineBreakModeVar)
+    //
+    //            let textEntity = ModelEntity(mesh: textMeshResource, materials: [materialVar])
+    //
+    //            return textEntity
+    //        }
+
 
 extension ARView: ARSessionDelegate {
     func setupForBodyTracking() {
@@ -166,7 +237,9 @@ class CustomARView: ARView {
 
 extension CustomARView: FEDelegate {
     func toTrackingState() {
-        print("tracking")
+        
+//        print("tracking")
+        return
     }
     
     func toInitializingState() {

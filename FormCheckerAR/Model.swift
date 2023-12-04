@@ -30,4 +30,5 @@ class Model {
                 print("DEBUG: Successfully loaded modelEntity for modelName: \(self.modelName)")
             })
     }
+   
 }

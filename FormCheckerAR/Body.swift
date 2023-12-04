@@ -10,17 +10,20 @@ import RealityKit
 import ARKit
 
 class Body: Entity {
-    var joints: [String: Entity] = [:]
+    var joints: [String: ModelEntity] = [:]
     var bones: [String: Entity] = [:]
     
     required init(for bodyAnchor: ARBodyAnchor) {
         super.init()
         
+        var jointRadius: Float = 0.04
+        var jointColor: UIColor = .blue
+        let jointGroup = CollisionGroup(rawValue: 1 << 0)
+//        let allButJointGroup = CollisionGroup.all.subtracting(jointGroup)
+//        let jointFilter = CollisionFilter(group: jointGroup, mask: allButJointGroup)
         for jointName in Joints.allCases {
-            var jointRadius: Float = 0.04
-            var jointColor: UIColor = .blue
-            
-            let jointEntity = createJoint(radius: jointRadius, color: jointColor)
+            let jointEntity = createJoint(radius: jointRadius, color: jointColor, name: jointName.jointString)
+//            jointEntity.collision?.filter = jointFilter
             joints[jointName.jointString] = jointEntity
             self.addChild(jointEntity)
         }
@@ -30,10 +33,12 @@ class Body: Entity {
         fatalError("init() has not been implemented")
     }
     
-    private func createJoint(radius: Float, color: UIColor = .white) -> Entity {
+    private func createJoint(radius: Float, color: UIColor = .white, name: String) -> ModelEntity {
         let mesh = MeshResource.generateSphere(radius: radius)
         let material = SimpleMaterial(color: color, roughness: 0.8, isMetallic: false)
         let entity = ModelEntity(mesh: mesh, materials: [material])
+        entity.name = name
+        entity.collision = CollisionComponent(shapes: [ShapeResource.generateSphere(radius: radius)])
         
         return entity
     }
@@ -43,7 +48,7 @@ class Body: Entity {
         
         for jointName in Joints.allCases {
             if let jointEntity = joints[jointName.jointString],
-               let jointEntityTransform = bodyAnchor.skeleton.modelTransform(for: ARSkeleton.JointName(rawValue: jointName.jointString) ) {
+               let jointEntityTransform = bodyAnchor.skeleton.modelTransform(for: ARSkeleton.JointName(rawValue: jointName.jointString)) {
                 
                 let jointEntityOffsetFromRoot = simd_make_float3(jointEntityTransform.columns.3)
                 jointEntity.position = jointEntityOffsetFromRoot + rootPosition
