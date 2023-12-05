@@ -14,8 +14,8 @@
             filePath = "FormCheckerAR/Body.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "22"
-            endingLineNumber = "22"
+            startingLineNumber = "26"
+            endingLineNumber = "26"
             landmarkName = "init(for:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -30,8 +30,8 @@
             filePath = "FormCheckerAR/Body.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "23"
-            endingLineNumber = "23"
+            startingLineNumber = "27"
+            endingLineNumber = "27"
             landmarkName = "init(for:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -46,8 +46,8 @@
             filePath = "FormCheckerAR/ContentView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "96"
-            endingLineNumber = "96"
+            startingLineNumber = "98"
+            endingLineNumber = "98"
             landmarkName = "updateUIView(_:context:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -62,8 +62,8 @@
             filePath = "FormCheckerAR/ContentView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "157"
-            endingLineNumber = "157"
+            startingLineNumber = "166"
+            endingLineNumber = "166"
             landmarkName = "updateUIView(_:context:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -78,58 +78,10 @@
             filePath = "FormCheckerAR/ContentView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "155"
-            endingLineNumber = "155"
-            landmarkName = "updateUIView(_:context:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "FEA0B4F9-82F4-405B-A966-F3E802BD47ED"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "FormCheckerAR/ContentView.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
             startingLineNumber = "156"
             endingLineNumber = "156"
             landmarkName = "updateUIView(_:context:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "FEA0B4F9-82F4-405B-A966-F3E802BD47ED - a9baf58ff3a9b8c5"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "FormCheckerAR.ARViewContainer.updateUIView(_: RealityKit.ARView, context: SwiftUI.UIViewRepresentableContext&lt;FormCheckerAR.ARViewContainer&gt;) -&gt; ()"
-                  moduleName = "FormCheckerAR"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/catherinelambert/Documents/FormCheckerAR/FormCheckerAR/ContentView.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "153"
-                  endingLineNumber = "153"
-                  offsetFromSymbolStart = "4580">
-               </Location>
-               <Location
-                  uuid = "FEA0B4F9-82F4-405B-A966-F3E802BD47ED - a9baf58ff3a9b8c5"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "FormCheckerAR.ARViewContainer.updateUIView(_: RealityKit.ARView, context: SwiftUI.UIViewRepresentableContext&lt;FormCheckerAR.ARViewContainer&gt;) -&gt; ()"
-                  moduleName = "FormCheckerAR"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/catherinelambert/Documents/FormCheckerAR/FormCheckerAR/ContentView.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "153"
-                  endingLineNumber = "153"
-                  offsetFromSymbolStart = "4592">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

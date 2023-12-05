@@ -9,8 +9,12 @@ import Foundation
 import RealityKit
 import ARKit
 
+let matchSound = Bundle.main.path(forResource: "form_match", ofType: "mp3")
+var matchAudio = AVAudioPlayer()
+
 class Body: Entity {
     var joints: [String: ModelEntity] = [:]
+    var jointsMatch: [String: Bool] = [:]
     var bones: [String: Entity] = [:]
     
     required init(for bodyAnchor: ARBodyAnchor) {
@@ -25,6 +29,7 @@ class Body: Entity {
             let jointEntity = createJoint(radius: jointRadius, color: jointColor, name: jointName.jointString)
 //            jointEntity.collision?.filter = jointFilter
             joints[jointName.jointString] = jointEntity
+            jointsMatch[jointName.jointString] = false
             self.addChild(jointEntity)
         }
     }
@@ -54,6 +59,16 @@ class Body: Entity {
                 jointEntity.position = jointEntityOffsetFromRoot + rootPosition
                 jointEntity.orientation = Transform(matrix: jointEntityTransform).rotation
             }
+        }
+        
+        if jointsMatch.allSatisfy({$0.value == true}){
+            do {
+                matchAudio = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: matchSound!))
+            }
+            catch {
+                print("DEBUG: can't play sound")
+            }
+            matchAudio.play()
         }
     }
     

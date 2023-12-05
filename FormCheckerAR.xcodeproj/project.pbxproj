@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		6242CBBF2B17E1CA00183152 /* warrior.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 6242CBBE2B17E1CA00183152 /* warrior.usdz */; };
 		6248FF962B1E5D6E001AA670 /* squat.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 6248FF952B1E5D6E001AA670 /* squat.usdz */; };
+		6248FF992B1E63B0001AA670 /* model_placed.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6248FF982B1E63B0001AA670 /* model_placed.mp3 */; };
+		6248FF9B2B1E6579001AA670 /* form_match.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6248FF9A2B1E6579001AA670 /* form_match.mp3 */; };
 		F27B6F082B02CA1400A59D21 /* SkeletonJoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = F27B6F072B02CA1400A59D21 /* SkeletonJoint.swift */; };
 		F27B6F0A2B02D0FB00A59D21 /* SkeletonBone.swift in Sources */ = {isa = PBXBuildFile; fileRef = F27B6F092B02D0FB00A59D21 /* SkeletonBone.swift */; };
 		F27B6F0C2B02D23300A59D21 /* Bones.swift in Sources */ = {isa = PBXBuildFile; fileRef = F27B6F0B2B02D23300A59D21 /* Bones.swift */; };
@@ -45,6 +47,8 @@
 /* Begin PBXFileReference section */
 		6242CBBE2B17E1CA00183152 /* warrior.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; name = warrior.usdz; path = "../../../../Downloads/yoga-warrior-2-exercise/warrior.usdz"; sourceTree = "<group>"; };
 		6248FF952B1E5D6E001AA670 /* squat.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; name = squat.usdz; path = "../../../../Downloads/air-squat/squat.usdz"; sourceTree = "<group>"; };
+		6248FF982B1E63B0001AA670 /* model_placed.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = model_placed.mp3; sourceTree = "<group>"; };
+		6248FF9A2B1E6579001AA670 /* form_match.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = form_match.mp3; sourceTree = "<group>"; };
 		F27B6F072B02CA1400A59D21 /* SkeletonJoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkeletonJoint.swift; sourceTree = "<group>"; };
 		F27B6F092B02D0FB00A59D21 /* SkeletonBone.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkeletonBone.swift; sourceTree = "<group>"; };
 		F27B6F0B2B02D23300A59D21 /* Bones.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bones.swift; sourceTree = "<group>"; };
@@ -90,6 +94,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6248FF972B1E6399001AA670 /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				6248FF9A2B1E6579001AA670 /* form_match.mp3 */,
+				6248FF982B1E63B0001AA670 /* model_placed.mp3 */,
+			);
+			path = Sounds;
+			sourceTree = "<group>";
+		};
 		F2AC40902B0033D50054C327 = {
 			isa = PBXGroup;
 			children = (
@@ -113,6 +126,7 @@
 		F2AC409B2B0033D50054C327 /* FormCheckerAR */ = {
 			isa = PBXGroup;
 			children = (
+				6248FF972B1E6399001AA670 /* Sounds */,
 				F2BFC5BB2B02B6740041F682 /* Info.plist */,
 				F2AC40C82B00432A0054C327 /* Models */,
 				F2AC409C2B0033D50054C327 /* AppDelegate.swift */,
@@ -274,6 +288,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				6248FF962B1E5D6E001AA670 /* squat.usdz in Resources */,
+				6248FF992B1E63B0001AA670 /* model_placed.mp3 in Resources */,
+				6248FF9B2B1E6579001AA670 /* form_match.mp3 in Resources */,
 				F2AC40A62B0033D80054C327 /* Preview Assets.xcassets in Resources */,
 				6242CBBF2B17E1CA00183152 /* warrior.usdz in Resources */,
 				F2AC40A32B0033D80054C327 /* Assets.xcassets in Resources */,

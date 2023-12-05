@@ -9,6 +9,7 @@ import ARKit
 import Foundation
 import FocusEntity
 import Combine
+import AVFoundation
 
 struct ContentView : View {
     
@@ -59,13 +60,14 @@ private let bodySkeletonAnchor = AnchorEntity()
 private var joints: [String:Entity] = [:]
 private var collisionSubs: [AnyCancellable] = []
 
+let loadSound = Bundle.main.path(forResource: "model_placed", ofType: "mp3")
+var loadAudio = AVAudioPlayer()
+
 struct ARViewContainer: UIViewRepresentable {
     
     @Binding var modelConfirmedForPlacement: Model?
     
     @Binding var modelLoaded: Bool
-    
-
     
     func makeUIView(context: Context) -> ARView {
         
@@ -116,9 +118,7 @@ struct ARViewContainer: UIViewRepresentable {
                     
                         jEntity?.model?.materials = [SimpleMaterial(color: .green, roughness: 0.8, isMetallic: false)]
                         
-                        let jointName = jEntity?.name
-                        print(jointName)
-                        
+                        bodySkeleton?.jointsMatch[jEntity!.name] = true
 
                     }
                 } as! AnyCancellable
@@ -134,13 +134,14 @@ struct ARViewContainer: UIViewRepresentable {
                     
                     
                         jEntity?.model?.materials = [SimpleMaterial(color: .blue, roughness: 0.8, isMetallic: false)]
+                        
+                        bodySkeleton?.jointsMatch[jEntity!.name] = false
 
                     }
                 } as! AnyCancellable
                 
                 jointCollisionSubscriptionBeg.store(in: &collisionSubs)
                 jointCollisionSubscriptionEnd.store(in: &collisionSubs)
-            
                 
             } else {
                 print("DEBUG: unable to load modelEntity for \(model.modelName)")
@@ -153,8 +154,17 @@ struct ARViewContainer: UIViewRepresentable {
             
         }
         if self.modelLoaded {
+            do {
+                loadAudio = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: loadSound!))
+            }
+            catch {
+                print("DEBUG: can't play sound")
+            }
+            loadAudio.play()
+            
             uiView.setupForBodyTracking()
             uiView.scene.addAnchor(bodySkeletonAnchor)
+    
         }
     }
 }
@@ -181,7 +191,6 @@ struct ARViewContainer: UIViewRepresentable {
     //            return textEntity
     //        }
 
-
 extension ARView: ARSessionDelegate {
     func setupForBodyTracking() {
         let configuration = ARBodyTrackingConfiguration()
@@ -201,6 +210,7 @@ extension ARView: ARSessionDelegate {
                 }
             }
         }
+        
     }
 }
 
