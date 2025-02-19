@@ -63,6 +63,8 @@ private var collisionSubs: [AnyCancellable] = []
 let loadSound = Bundle.main.path(forResource: "model_placed", ofType: "mp3")
 var loadAudio = AVAudioPlayer()
 
+let guidance = AVSpeechSynthesizer()
+
 struct ARViewContainer: UIViewRepresentable {
     
     @Binding var modelConfirmedForPlacement: Model?
@@ -100,8 +102,6 @@ struct ARViewContainer: UIViewRepresentable {
                 modelEntity.name = "model"
                 anchorEntity.addChild(modelEntity)
                 uiView.scene.addAnchor(anchorEntity)
-    
-                
                 
                 var jointCollisionSubscriptionBeg:AnyCancellable
                 var jointCollisionSubscriptionEnd:AnyCancellable
@@ -164,32 +164,94 @@ struct ARViewContainer: UIViewRepresentable {
             
             uiView.setupForBodyTracking()
             uiView.scene.addAnchor(bodySkeletonAnchor)
+      
+            let modelAnchor = uiView.scene.anchors.first(where: {$0.name == "model_anchor"})
+            
+            Timer.scheduledTimer(withTimeInterval: 8, repeats: true) { timer in
+//                let bodyAnchor = uiView.scene.anchors[uiView.scene.anchors.count - 1]
+                let bodyAnchor = bodySkeleton?.joints["hips_joint"]
+                let dstABS = distanceBetweenEntitiesABS(bodyAnchor?.position(relativeTo: nil) ?? [0, 0, 0], and: (modelAnchor?.position(relativeTo: nil))!)
+                let dst = distanceBetweenEntities(bodyAnchor?.position(relativeTo: nil) ?? [0, 0, 0], and: (modelAnchor?.position(relativeTo: nil))!)
+
+                print("Distance: \(dst)")
+                let max = dstABS.max()
+                let dstABSArr = [dstABS.x, dstABS.y, dstABS.z]
+                let dstArr = [dst.x, dst.y, dst.z]
+                let index = dstABSArr.firstIndex(of: max)
+                let utterance = getUtterance(for: index ?? 4, in: dstABSArr, in: dstArr, in: dstABS)
+                let voice = AVSpeechSynthesisVoice(identifier: "com.apple.ttsbundle.siri_female_en-AU_compact")
+                utterance.voice = voice
+                guidance.speak(utterance)
+            }
     
         }
     }
 }
+
+private func distanceBetweenEntitiesABS(_ a: SIMD3<Float>,
+                                       and b: SIMD3<Float>) -> SIMD3<Float> {
+        
+        var distance: SIMD3<Float> = [0, 0, 0]
+        distance.x = abs(a.x - b.x)
+        distance.y = abs(a.y - b.y)
+        distance.z = abs(a.z - b.z)
+        return distance
+    }
+
+private func getUtterance(for index: Int, in dstABSArr: [Float], in dstArr: [Float], in dstABS: SIMD3<Float>) -> AVSpeechUtterance {
+    var text: String
+    var utterance: AVSpeechUtterance = AVSpeechUtterance(string: "")
+    switch index {
+    case 0:
+        if dstArr[index] > 0.07 {
+            text = "Move to your right"
+            utterance = AVSpeechUtterance(string: text)
+        }
+        else if dstArr[index] < -0.07 {
+            text = "Move to your left"
+            utterance = AVSpeechUtterance(string: text)
+        }
+    case 1:
+        if dstArr[index] < 0.65 {
+            text = "Raise your body"
+            utterance = AVSpeechUtterance(string: text)
+        }
+        else if dstArr[index] > 0.8 {
+            text = "Lower your body"
+            utterance = AVSpeechUtterance(string: text)
+        }
+        else {
+            let newIndex = dstABSArr.firstIndex(of: [dstABS.x, dstABS.z].max()!)
+            utterance = getUtterance(for: newIndex ?? 0, in: dstABSArr, in: dstArr, in: dstABS)
+        }
+    case 2:
+        if dstArr[index] > 0.04 {
+            text = "Take a step backwards"
+            utterance = AVSpeechUtterance(string: text)
+        }
+        else if dstArr[index] < -0.09
+        {
+            text = "Take a step towards the camera"
+            utterance = AVSpeechUtterance(string: text)
+        }
+    default:
+        text = "Move into camera frame"
+        utterance = AVSpeechUtterance(string: text)
+        print("DEBUG: Can't get distance between model and body")
+    }
     
-    //    func textGen(textString: String) -> ModelEntity {
-    //
-    //            let materialVar = SimpleMaterial(color: .black, roughness: 0, isMetallic: false)
-    //
-    //            let depthVar: Float = 0.001
-    //            let fontVar = UIFont.systemFont(ofSize: 0.02)
-    //            let containerFrameVar = CGRect(x: -0.05, y: -0.1, width: 0.1, height: 0.1)
-    //            let alignmentVar: CTTextAlignment = .center
-    //            let lineBreakModeVar : CTLineBreakMode = .byWordWrapping
-    //
-    //            let textMeshResource : MeshResource = .generateText(textString,
-    //                                               extrusionDepth: depthVar,
-    //                                               font: fontVar,
-    //                                               containerFrame: containerFrameVar,
-    //                                               alignment: alignmentVar,
-    //                                               lineBreakMode: lineBreakModeVar)
-    //
-    //            let textEntity = ModelEntity(mesh: textMeshResource, materials: [materialVar])
-    //
-    //            return textEntity
-    //        }
+    return utterance
+}
+
+private func distanceBetweenEntities(_ a: SIMD3<Float>,
+                                       and b: SIMD3<Float>) -> SIMD3<Float> {
+        
+        var distance: SIMD3<Float> = [0, 0, 0]
+        distance.x = (a.x - b.x)
+        distance.y = (a.y - b.y)
+        distance.z = (a.z - b.z)
+        return distance
+    }
 
 extension ARView: ARSessionDelegate {
     func setupForBodyTracking() {
@@ -207,6 +269,7 @@ extension ARView: ARSessionDelegate {
                 } else {
                     bodySkeleton = Body(for: bodyAnchor)
                     bodySkeletonAnchor.addChild(bodySkeleton!)
+//                    print(self.scene.anchors)
                 }
             }
         }
@@ -253,7 +316,7 @@ extension CustomARView: FEDelegate {
     }
     
     func toInitializingState() {
-        print("initializing")
+//        print("initializing")
     }
 }
 
